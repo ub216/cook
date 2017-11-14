@@ -1,5 +1,3 @@
-# cook
-
 ## 2-Class prediction
 
 This project trains a mobileNet (https://arxiv.org/pdf/1704.04861.pdf) inspired network for a two class prediction problem.
