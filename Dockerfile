@@ -1,20 +1,7 @@
-FROM tensorflow/tensorflow:1.3.0-devel-gpu
+FROM ubuntu:16.04
 
-# Download and build Keras
-RUN git clone git://github.com/fchollet/keras.git &&\
-    cd keras && \
-    python setup.py install && \
-    cd ..
+RUN pwd && ls
 
-# Download the repository
-RUN pwd && ls && git clone https://github.com/ub216/cook 
+ADD train.py /
 
-# Download and split the dataset
-RUN cd cook && ls && \
-    wget http://research.us-east-1.s3.amazonaws.com/public/sushi_or_sandwich_photos.zip && \
-    unzip sushi_or_sandwich_photos.zip && \
-    pwd && ls && \
-    python split_data.py
-
-# Run training and validation codes
-RUN python train.py
+RUN pwd && ls
