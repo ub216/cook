@@ -17,7 +17,7 @@ RUN pwd && ls && python split_data.py
 ADD train.py /root
 ADD dltools /root/dltools
 WORKDIR /root
-ENV PYTHONPATH /root
+ENV PYTHONPATH /root/dltools
 RUN pwd && ls && cd dltools && pwd && ls
 
 RUN python train.py
