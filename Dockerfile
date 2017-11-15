@@ -14,7 +14,10 @@ ADD split_data.py /root
 RUN pwd && ls && python split_data.py
 
 # Run training and validation codes
-ADD dltools /root/dltools
-RUN pwd && ls && cd dltools && pwd && ls
 ADD train.py /root
+ADD dltools /root/dltools
+WORKDIR /root
+ENV PYTHONPATH /root
+RUN pwd && ls && cd dltools && pwd && ls
+
 RUN python train.py
