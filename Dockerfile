@@ -40,12 +40,12 @@ RUN pip --no-cache-dir install \
     python -m ipykernel.kernelspec
 
 # Set up our notebook config.
-COPY jupyter_notebook_config.py /root/.jupyter/
+# COPY jupyter_notebook_config.py /root/.jupyter/
 
 # Jupyter has issues with being run directly:
 #   https://github.com/ipython/ipython/issues/7062
 # We just add a little wrapper script.
-COPY run_jupyter.sh /
+# COPY run_jupyter.sh /
 
 # Set up Bazel.
 
