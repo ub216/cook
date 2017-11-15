@@ -10,10 +10,10 @@ RUN pwd && ls && wget http://research.us-east-1.s3.amazonaws.com/public/sushi_or
     unzip sushi_or_sandwich_photos.zip
 
 # Configure the dataset
-ADD dltools/ /root
 ADD split_data.py /root
 RUN pwd && ls && python split_data.py
 
 # Run training and validation codes
+ADD dltools /root/dltools
 ADD train.py /root
 RUN python train.py
