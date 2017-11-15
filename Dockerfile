@@ -12,6 +12,7 @@ RUN pwd && ls && git clone https://github.com/ub216/cook && cd cook && ls
 # Download and split the dataset
 RUN wget http://research.us-east-1.s3.amazonaws.com/public/sushi_or_sandwich_photos.zip && \
     unzip sushi_or_sandwich_photos.zip && \
+    pwd && ls && \
     python split_data.py
 
 # Run training and validation codes
