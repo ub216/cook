@@ -9,7 +9,7 @@ RUN git clone git://github.com/fchollet/keras.git &&\
 # Download and split the dataset
 RUN wget http://research.us-east-1.s3.amazonaws.com/public/sushi_or_sandwich_photos.zip && \
     unzip sushi_or_sandwich_photos.zip && \
-    python split_data.py &&
+    python split_data.py
 
 # Run training and validation codes
 RUN python train.py
