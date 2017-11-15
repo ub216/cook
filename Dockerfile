@@ -18,6 +18,6 @@ ADD train.py /root
 ADD dltools /root/dltools
 WORKDIR /root
 ENV PYTHONPATH /root
-RUN apt-get update && apt-get install python3-tk && pwd && ls && cd dltools && pwd && ls
+RUN apt-get update && apt-get install -y --no-install-recommends python3-tk && pwd && ls && cd dltools && pwd && ls
 
 RUN python3 train.py
