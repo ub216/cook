@@ -4,7 +4,7 @@ RUN ln -s /usr/local/cuda/lib64/stubs/libcuda.so /usr/local/cuda/lib64/stubs/lib
 RUN apt-get update && apt-get install -y --no-install-recommends python3-tk wget unzip
 
 # Download and build Keras
-RUN pwd && ls &&  wget http://research.us-east-1.s3.amazonaws.com/public/sushi_or_sandwich_photos.zip \
+RUN pwd && ls &&  git clone https://github.com/fchollet/keras.git \
     cd keras && \
     python3 setup.py install
 
