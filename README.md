@@ -8,7 +8,7 @@ This project trains a mobileNet (https://arxiv.org/pdf/1704.04861.pdf) inspired 
 - Python3, Tensorflow, Keras
 
 ## Running
-The simplest way to run is to fork (or clone) the project and run in [docker cloud](https://cloud.docker.com/swarm/ub216/dashboard/onboarding/cloud-registry) (or docker run locally).
+The simplest way to run is to fork (or clone) the project and run in [docker cloud](https://cloud.docker.com/swarm/ub216/dashboard/onboarding/cloud-registry) (or docker run locally). Note that after training I plot a few figures which can be viewed only if you pass the approriate [flags](http://wiki.ros.org/docker/Tutorials/GUI). 
 
 The above method would run in cpu. To use gpu please run with [nvidia-docker](https://github.com/NVIDIA/nvidia-docker).
 
