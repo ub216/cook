@@ -5,10 +5,21 @@ This project trains a mobileNet (https://arxiv.org/pdf/1704.04861.pdf) inspired 
 ## Dependencies
 - Cuda-8.0, Cudnn-6
 
-- Python, Tensorflow, Keras
+- Python3, Tensorflow, Keras
 
 ## Running
-Download the git repository and run the dockerfile to install all dependencies. The dockerfile also downloads the data and runs the training code.
+The simplest way to run is to fork (or clone) the project and run in [docker cloud](https://cloud.docker.com/swarm/ub216/dashboard/onboarding/cloud-registry) (or docker run locally).
+This above method would runm in cpu. To use gpu please run with [nvidia-docker](https://github.com/NVIDIA/nvidia-docker).
+Else download the git repository and make sure all the dependecies are met. Download the dataset (http://research.us-east-1.s3.amazonaws.com/public/sushi_or_sandwich_photos.zip) and unzip in the same folder. Run split_data.py followed by train.py.
+
+```
+git clone https://github.com/ub216/cook
+cd cook
+wget http://research.us-east-1.s3.amazonaws.com/public/sushi_or_sandwich_photos.zip
+unzip sushi_or_sandwich_photos.zip
+python3 split_data.py
+python3 train.py
+```
 
 ## Training
 The training data (sushi-vs-sandwich) was split into a ~90/10 % training/validation split giving a total of 724 training and 80 testing images.
@@ -56,5 +67,3 @@ Predicting network confidence rather than having an extra label might be a possi
 ## Acknowledgement
 
 The depthwise convolution code is based on Keras separable convolution layer code and modified as per needs.
-Dockerfile is based on Craig Citro dockerfile for tensorflow (https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/docker) and changed for this project.
-
