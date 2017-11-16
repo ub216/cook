@@ -9,7 +9,9 @@ This project trains a mobileNet (https://arxiv.org/pdf/1704.04861.pdf) inspired 
 
 ## Running
 The simplest way to run is to fork (or clone) the project and run in [docker cloud](https://cloud.docker.com/swarm/ub216/dashboard/onboarding/cloud-registry) (or docker run locally).
-This above method would runm in cpu. To use gpu please run with [nvidia-docker](https://github.com/NVIDIA/nvidia-docker).
+
+The above method would run in cpu. To use gpu please run with [nvidia-docker](https://github.com/NVIDIA/nvidia-docker).
+
 Else download the git repository and make sure all the dependecies are met. Download the dataset (http://research.us-east-1.s3.amazonaws.com/public/sushi_or_sandwich_photos.zip) and unzip in the same folder. Run split_data.py followed by train.py.
 
 ```
