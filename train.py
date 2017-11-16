@@ -114,6 +114,7 @@ train = network.fit_generator(
             callbacks=[update_lr],
             validation_data=validation_generator,
             validation_steps=config["no_testing"] // config["batch_size"])
+network.save_weights("model.h5")
 
 ########################################################################################################################
 # PLOT RESULTS
